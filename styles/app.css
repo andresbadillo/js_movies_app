@@ -355,7 +355,7 @@ button {
 
 /* Footer */
 footer{
-    background-color: var(--blue-light-2);
+    background-color: var(--blue-dark-2);
     padding: 10px 10px;
     display: flex;
     justify-content: space-evenly;
@@ -364,7 +364,7 @@ footer{
 }
 footer p a {
     cursor: pointer;
-    color: var(--blue-dark-2);
+    color: var(--blue-light-2);
     text-decoration: none;
     font-weight: bold;
 }
@@ -380,12 +380,13 @@ footer ul li {
 }
 footer p{
     font-size: 1.0rem;
+    color: var(--blue-light-1);
 }
 footer i{
-    color: var(--blue);
+    color: var(--blue-light-1);
     font-size: 1.8rem;
     transition-duration: 400ms;
 }
 footer i:hover{
-    color: var(--blue-dark-1);
+    color: var(--blue-light-2);
 }

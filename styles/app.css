@@ -119,7 +119,7 @@ button {
 .categoriesPreview-list, .categories-list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   position: relative;
   flex-wrap: wrap;
 }
@@ -220,27 +220,30 @@ button {
 
 /* Categories */
 .category-container {
-  width: 45%;
+  margin-right: 10px;
 }
 
 .category-title {
+  padding: 5px 10px;
   margin-bottom: 8px;
+  background-color: var(--idColor);
+  color: var(--blue-light-1);
   cursor: pointer;
+  border-radius: 8px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.category-title::before {
+/* .category-title::before {
   content: '••••';
   color: transparent;
-  /* TODO: cambiar color por ID de la categoría */
   background-color: var(--idColor);
   border-radius: 8px;
   margin-right: 8px;
   width: 8px;
   height: 8px;
-}
+} */
 #id28 { --idColor: var(--blue); }
 #id12 { --idColor: var(--red); }
 #id16 { --idColor: var(--green); }

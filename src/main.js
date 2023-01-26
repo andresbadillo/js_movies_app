@@ -1,3 +1,5 @@
+// TODO: borrar API_KEY
+const API_KEY = '679bcfaabfe4159f4f33a99d1840f452';
 
 /* Consulta API - Peliculas en tendencia */
 async function getTrendingMoviesPreview() {

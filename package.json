@@ -1,0 +1,23 @@
+{
+  "name": "js_movies_app",
+  "version": "1.0.0",
+  "description": "Movies App",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresbadillo/js_movies_app.git"
+  },
+  "keywords": [
+    "API-Rest",
+    "JavaScript"
+  ],
+  "author": "@andresbadillo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andresbadillo/js_movies_app/issues"
+  },
+  "homepage": "https://github.com/andresbadillo/js_movies_app#readme"
+}

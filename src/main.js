@@ -50,7 +50,7 @@ function createCategories(categories, container) {
     });
 }
 
-/* Consulta API - Peliculas en tendencia */
+/* Consulta API - Peliculas en tendencia Preview */
 async function getTrendingMoviesPreview() {
     const { data } = await api('trending/movie/day');
     const movies = data.results;
@@ -84,6 +84,14 @@ async function getMoviesBySearch(query) {
             query: query,
         },
     });
+    const movies = data.results;
+
+    createMovies(movies, genericSection);
+}
+
+/* Consulta API - Peliculas en tendencia */
+async function getTrendingMovies() {
+    const { data } = await api('trending/movie/day');
     const movies = data.results;
 
     createMovies(movies, genericSection);

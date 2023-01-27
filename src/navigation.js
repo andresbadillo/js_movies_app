@@ -19,6 +19,11 @@ function navigator() {
     } else {
         homePage();
     }
+
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
 
 function homePage() {
@@ -56,6 +61,16 @@ function categoriesPage() {
     categoriesPreviewSection.classList.add('inactive');
     genericSection.classList.remove('inactive');
     movieDetailSection.classList.add('inactive');
+
+    // [#category=id-name]
+    const [_, categoryData] = location.hash.split('=');
+    // [id-name]
+    const [categoryId, categoryName] = categoryData.split('-');
+    const newCategoryName = decodeURI(categoryName);
+
+    headerCategoryTitle.innerHTML = newCategoryName;
+
+    getMoviesByCategory(categoryId);
 }
 
 function movieDetailsPage() {

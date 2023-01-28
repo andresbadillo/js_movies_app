@@ -363,7 +363,7 @@ button {
 /* Footer */
 footer{
   display: flex;
-  padding: 15px 10px;
+  padding: 15px 15px;
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
@@ -383,7 +383,7 @@ footer ul {
 footer ul li {
   float: left;
   text-align: center;
-  width: 4em;
+  width: 6em;
 }
 footer p{
   font-size: 1.2rem;

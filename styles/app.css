@@ -386,12 +386,12 @@ footer ul li {
   width: 6em;
 }
 footer p{
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--blue-light-1);
 }
 footer i{
   color: var(--blue-light-1);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   transition-duration: 400ms;
 }
 footer i:hover{

@@ -39,6 +39,9 @@ function createMovies(movies, container, lazyLoad = false) {
             lazyLoad ? 'data-img' : 'src',
             'https://image.tmdb.org/t/p/w300/' + movie.poster_path
         );
+        movieImg.addEventListener('error', () => {
+            movieImg.setAttribute('src', 'https://via.placeholder.com/300x450/3a6aad/ffffff?text=No image');
+        });
 
         if (lazyLoad) {
             lazyLoader.observe(movieImg);
@@ -108,7 +111,7 @@ async function getMoviesBySearch(query) {
     });
     const movies = data.results;
 
-    createMovies(movies, genericSection, true);
+    createMovies(movies, genericSection);
 }
 
 /* Consulta API - Peliculas en tendencia */
@@ -148,5 +151,5 @@ async function getRelatedMoviesById(id) {
     relatedMoviesContainer.scrollTo(0, 0);
 }
 
-getTrendingMoviesPreview();
-getCategoriesPreview();
+// getTrendingMoviesPreview();
+// getCategoriesPreview();

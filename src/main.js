@@ -100,25 +100,29 @@ async function getMoviesByCategory(id) {
         },
     });
     const movies = data.results;
+    maxPage = data.total_pages;
 
     createMovies(movies, genericSection, {lazyLoad: true, clean: true});
 }
 
-async function getPaginatedMoviesByCategory(id) {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+function getPaginatedMoviesByCategory(id) {
+    return async function() {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        const scrollBottom = (scrollTop + clientHeight) >= (scrollHeight -15);
 
-    const scrollBottom = (scrollTop + clientHeight) >= (scrollHeight -15);
+        const pageIsNotMax = page < maxPage;
 
-    if (scrollBottom) {
-        const { data } = await api('/discover/movie', {
-            params: {
-                with_genres: id,
-                page: page++,
-            },
-        });
-        const movies = data.results;
-    
-        createMovies(movies, genericSection, {lazyLoad: true, clean: false});    
+        if (scrollBottom && pageIsNotMax) {
+            const { data } = await api('/discover/movie', {
+                params: {
+                    with_genres: id,
+                    page: page++,
+                },
+            });
+            const movies = data.results;
+        
+            createMovies(movies, genericSection, {lazyLoad: true, clean: false});    
+        };
     };
 }
 
@@ -130,25 +134,29 @@ async function getMoviesBySearch(query) {
         },
     });
     const movies = data.results;
+    maxPage = data.total_pages;
 
     createMovies(movies, genericSection, {lazyLoad: true, clean: true});
 }
 
-async function getPaginatedMoviesBySearch(query) {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+function getPaginatedMoviesBySearch(query) {
+    return async function() {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        const scrollBottom = (scrollTop + clientHeight) >= (scrollHeight -15);
 
-    const scrollBottom = (scrollTop + clientHeight) >= (scrollHeight -15);
+        const pageIsNotMax = page < maxPage;
 
-    if (scrollBottom) {
-        const { data } = await api('/search/movie', {
-            params: {
-                query: query,
-                page: page++,
-            },
-        });
-        const movies = data.results;
-    
-        createMovies(movies, genericSection, {lazyLoad: true, clean: false});    
+        if (scrollBottom && pageIsNotMax) {
+            const { data } = await api('/search/movie', {
+                params: {
+                    query: query,
+                    page: page++,
+                },
+            });
+            const movies = data.results;
+        
+            createMovies(movies, genericSection, {lazyLoad: true, clean: false});    
+        };
     };
 }
 

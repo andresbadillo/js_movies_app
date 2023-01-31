@@ -24,7 +24,6 @@ function likedMoviesList() {
 
 function likeMovie(movie) {
     const likedMovies = likedMoviesList();
-    console.log(likedMovies);
 
     if (likedMovies[movie.id]) {
         likedMovies[movie.id] = undefined;
@@ -266,6 +265,16 @@ function getLikedMovies() {
     const moviesArray = Object.values(likedMovies);
 
     createMovies(moviesArray, likedMoviesContainer, {lazyLoad: true, clean: true});
+
+    if (moviesArray.length >= 1) {
+        console.log('Hay favoritos');
+        likedMoviesContainer.classList.remove('inactive');
+    } else {
+        console.log('No hay favoritos');
+        likedMoviesContainer.classList.add('inactive');
+    }
+
+    // createMovies(moviesArray, likedMoviesContainer, {lazyLoad: true, clean: true});
 }
 
 // getTrendingMoviesPreview();

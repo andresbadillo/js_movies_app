@@ -16,7 +16,7 @@ const api = axios.create({
 function likedMoviesList() {
     const item = JSON.parse(localStorage.getItem('liked_movies'));
     let movies;
-
+    
     item ? movies = item : movies = {};
 
     return movies;
@@ -76,6 +76,7 @@ function createMovies(movies, container, {lazyLoad = false, clean = true} = {},)
             movieBtn.classList.toggle('movie-btn--liked');
             likeMovie(movie);
             getLikedMovies();
+            getTrendingMoviesPreview();
         });
 
         if (lazyLoad) {

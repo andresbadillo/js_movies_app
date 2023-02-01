@@ -2,6 +2,7 @@
 
 // TODO: borrar API_KEY
 const API_KEY = '679bcfaabfe4159f4f33a99d1840f452';
+let language = navigator.language;
 
 const api = axios.create({
     baseURL: 'https://api.themoviedb.org/3/',
@@ -10,6 +11,7 @@ const api = axios.create({
     },
     params: {
         'api_key': API_KEY,
+        'language': language,
     }
 });
 
